@@ -9,6 +9,7 @@
 #TODO: Add a function to install Elixir, Erlang, mix
 #TODO: Add a function to install Clojure, Leiningen
 #TODO: Add a function to install Zig
+
 check_package_installed_dpkg() {
 	dpkg -s "$1" &>/dev/null
 }
@@ -60,9 +61,9 @@ install_neofetch() {
 }
 
 install_neovim() {
-	if ! check_package_installed_dpkg neovim; then
+	if ! check_package_installed_dpkg nvim; then
 		echo "Neovim is not installed. Installing..."
-		install_snap_package neovim
+		install_snap_package nvim
 	else
 		echo "Neovim is already installed."
 	fi
@@ -72,6 +73,8 @@ install_tmux() {
 	if ! check_package_installed_dpkg tmux; then
 		echo "Tmux is not installed. Installing..."
 		install_apt_package tmux
+		echo "Installing tmux package manager"
+		git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 	else
 		echo "Tmux is already installed."
 	fi
@@ -81,7 +84,7 @@ install_zsh() {
 	if ! check_package_installed_dpkg zsh; then
 		echo "Zsh is not installed. Installing..."
 		install_apt_package zsh
-		chsh -s $(which zsh)
+		sudo usermod -s /usr/bin/zsh $(whoami)
 	else
 		echo "Zsh is already installed."
 	fi
@@ -164,15 +167,15 @@ echo "Installing dependencies..."
 install_git
 install_curl
 install_ripgrep
-install_python3
 install_neofetch
 install_neovim
 install_zsh
 
+echo "Installing languages"
+install_python3
+install_rust
+
 #configuring development environment
-#TODO: Add a function to configure ssh
-#TODO: Add a function to configure tmux
-#TODO: Add a function to configure neovim
 
 configure_git() {
 	git config --global user.email $1
@@ -205,11 +208,29 @@ install_fonts() {
 	fi
 }
 
+install_gnome_theme() {
+	curl -L https://raw.githubusercontent.com/catppuccin/gnome-terminal/v0.2.0/install.py | python3 -
+}
+
+generate_ssh_key() {
+	ssh-keygen -t ed25519 -C $1
+	eval "$(ssh-agent -s)"
+}
+
+configure neovim() {
+  if [ ! -d "$HOME/.config/nvim" ]; then
+    git clone https://github.com/ViniciussSantos/nvimconfig.git ~/.config/nvim 
+  fi
+}
+
 echo "Configuring development environment..."
 
-read -p "Enter your email address for Git: " email
+read -p "Enter your email address for Git (will also be used for ssh key): " email
 read -p "Enter your name for Git: " name
 
 configure_git "$email" "$name"
 add_zsh_syntax_highlighting
 install_fonts
+install_gnome_theme
+generate_ssh_key "$email"
+configure_neovim
