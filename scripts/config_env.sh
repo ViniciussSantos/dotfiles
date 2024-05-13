@@ -1,14 +1,16 @@
 #!/bin/bash
 
+#TODO: configure GNU Stow
 #Utility functions
 #TODO: Add a function to install nodejs, npm, yarn, n, pnpm
-#TODO: Add a function to install docker, docker-compose, kubectl
+#TODO: Add a function to install kubectl
 #TODO: Add a function to install Haskell, stack, cabal
 #TODO: Add a function to install Java, Maven, Gradle
 #TODO: Add a function to install Golang
 #TODO: Add a function to install Elixir, Erlang, mix
 #TODO: Add a function to install Clojure, Leiningen
 #TODO: Add a function to install Zig
+#TODO: Add function to install fzf, bat, delta, eza 
 
 check_package_installed_dpkg() {
 	dpkg -s "$1" &>/dev/null
@@ -201,6 +203,7 @@ install_fonts() {
 
 		curl -L "$url" -o /tmp/JetBrainsMono.zip
 
+    #modify this part to move all the fonts instead of just one 
 		unzip -o /tmp/JetBrainsMono.zip -d /tmp
 
 		mv /tmp/JetBrainsMonoNerdFont-ExtraLightItalic.ttf "$install_dir"
