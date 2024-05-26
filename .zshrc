@@ -74,12 +74,14 @@ export VISUAL='nvim'
 
 export PATH="$PATH:/opt/jmeter/bin"
 
-[ -f "/home/vini/.ghcup/env" ] && source "/home/vini/.ghcup/env" # ghcup-env
-
+# ghcup-env
+GHCUP_ENV_PATH="$HOME/.ghcup/env"
+[ -f "$GHCUP_ENV_PATH" ] && source "$GHCUP_ENV_PATH"
 
 # fzf
-if [[ ! "$PATH" == */home/vini/.fzf/bin* ]]; then
-  PATH="${PATH:+${PATH}:}/home/vini/.fzf/bin"
+FZF_BIN_PATH="$HOME/.fzf/bin"
+if [[ ! "$PATH" == *"$FZF_BIN_PATH"* ]]; then
+  PATH="${PATH:+${PATH}:}$FZF_BIN_PATH"
 fi
 
 eval "$(fzf --zsh)"
