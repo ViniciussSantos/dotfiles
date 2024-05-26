@@ -137,3 +137,6 @@ alias edit-zsh="nvim ~/.zshrc"
 alias vim="nvim"
 alias ls="eza --color=always --git --no-filesize --icons=always --no-time --no-user --no-permissions --all"
 alias cat="bat"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
