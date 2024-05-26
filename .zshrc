@@ -26,6 +26,23 @@ source "${ZINIT_HOME}/zinit.zsh"
 HISTSIZE=5000
 SAVEHIST=$HISTSIZE
 HISTFILE=~/.zsh_history
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
+#plugins 
+zinit light zsh-users/zsh-syntax-highlighting
+source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+
+# Add in Powerlevel10k
+zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # Use modern completion system
 autoload -Uz compinit
