@@ -55,6 +55,8 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 autoload -Uz compinit
 compinit
 
+zinit cdreplay -q
+
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
