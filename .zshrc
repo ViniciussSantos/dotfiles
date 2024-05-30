@@ -48,6 +48,14 @@ source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 
+#snippets
+zinit snippet OMZP::git
+zinit snippet OMZP::git-commit
+zinit snippet OMZP::kubectl
+zinit snippet OMZP::sudo
+zinit snippet OMZP::tmux
+zinit snippet OMZP::vagrant
+
 # Add in Powerlevel10k
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
