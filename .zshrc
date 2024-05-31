@@ -53,7 +53,6 @@ zinit snippet OMZP::git
 zinit snippet OMZP::git-commit
 zinit snippet OMZP::kubectl
 zinit snippet OMZP::sudo
-zinit snippet OMZP::tmux
 zinit snippet OMZP::vagrant
 
 # Add in Powerlevel10k
