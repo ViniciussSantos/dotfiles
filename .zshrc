@@ -142,7 +142,7 @@ _fzf_comprun() {
 }
 
 # bat 
-BAT_THEME="Catppuccin Mocha".
+export BAT_THEME="Catppuccin Mocha"
 
 # alias 
 alias reload-zsh="source ~/.zshrc"
