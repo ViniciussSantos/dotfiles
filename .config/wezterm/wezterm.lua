@@ -2,10 +2,22 @@ local wezterm = require("wezterm")
 local mux = wezterm.mux
 local config = {}
 
+local function is_laptop()
+  local battery_path = "/sys/class/power_supply/"
+  local handle = io.popen("ls " .. battery_path)
+  local result = handle:read("*a")
+  handle:close()
+
+  if result:match("BAT%d") then
+    return true
+  else
+    return false
+  end
+end
 -- style
 config.font = wezterm.font("JetBrains Mono")
 config.color_scheme = "Catppuccin Mocha"
-config.font_size = 10.0
+config.font_size = is_laptop() and 12.0 or 10.0
 config.window_padding = {
   left = 2,
   right = 2,
