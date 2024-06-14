@@ -61,6 +61,9 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 # add fzf git 
 zinit load junegunn/fzf-git.sh 
 
+#disable ctrl-s freezing the terminal 
+stty -ixon <$TTY >$TTY
+
 # Use modern completion system
 autoload -Uz compinit
 compinit
