@@ -58,6 +58,9 @@ zinit snippet OMZP::vagrant
 # Add in Powerlevel10k
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
+# add fzf git 
+zinit load junegunn/fzf-git.sh 
+
 # Use modern completion system
 autoload -Uz compinit
 compinit
