@@ -53,6 +53,7 @@ zinit snippet OMZP::git-commit
 zinit snippet OMZP::kubectl
 zinit snippet OMZP::sudo
 zinit snippet OMZP::vagrant
+zinit snippet OMZP::colored-man-pages
 
 # Add in Powerlevel10k
 zinit ice depth=1; zinit light romkatv/powerlevel10k
