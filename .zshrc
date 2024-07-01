@@ -92,6 +92,7 @@ export EDITOR='nvim'
 export VISUAL='nvim'
 
 export PATH="$PATH:/opt/jmeter/bin"
+export PATH=$PATH:/usr/local/go/bin
 
 # ghcup-env
 GHCUP_ENV_PATH="$HOME/.ghcup/env"
