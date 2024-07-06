@@ -44,8 +44,8 @@ setopt hist_ignore_dups
 setopt hist_find_no_dups
 
 #plugins 
+zinit ice pick"themes/catppuccin_mocha-zsh-syntax-highlighting.zsh"; zinit light catppuccin/zsh-syntax-highlighting
 zinit light zsh-users/zsh-syntax-highlighting
-source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 
