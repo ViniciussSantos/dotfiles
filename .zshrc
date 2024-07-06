@@ -95,6 +95,7 @@ export VISUAL='nvim'
 
 export PATH="$PATH:/opt/jmeter/bin"
 export PATH=$PATH:/usr/local/go/bin
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
 # ghcup-env
 GHCUP_ENV_PATH="$HOME/.ghcup/env"
@@ -163,3 +164,4 @@ alias lg="lazygit"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
