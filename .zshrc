@@ -61,7 +61,7 @@ zinit snippet OMZP::colored-man-pages
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # add fzf git 
-zinit ice pick "fzf-git.sh";zinit load junegunn/fzf-git.sh 
+zinit ice pick "fzf-git.sh";zinit light junegunn/fzf-git.sh
 
 #disable ctrl-s freezing the terminal 
 stty -ixon <$TTY >$TTY
