@@ -6,7 +6,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Set up the prompt
-
 autoload -Uz promptinit
 promptinit
 prompt adam1
@@ -91,24 +90,6 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-export EDITOR='nvim'
-export VISUAL='nvim'
-
-export PATH="$PATH:/opt/jmeter/bin"
-export PATH=$PATH:/usr/local/go/bin
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
-. "$HOME/.cargo/env"
-
-# ghcup-env
-GHCUP_ENV_PATH="$HOME/.ghcup/env"
-[ -f "$GHCUP_ENV_PATH" ] && source "$GHCUP_ENV_PATH"
-
-# fzf
-FZF_BIN_PATH="$HOME/.fzf/bin"
-if [[ ! "$PATH" == *"$FZF_BIN_PATH"* ]]; then
-  PATH="${PATH:+${PATH}:}$FZF_BIN_PATH"
-fi
-
 eval "$(fzf --zsh)"
 
 export FZF_DEFAULT_OPTS=" \
@@ -166,4 +147,3 @@ alias lg="lazygit"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-export PATH=${PATH}:`go env GOPATH`/bin
