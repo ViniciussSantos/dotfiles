@@ -79,13 +79,10 @@ zinit snippet OMZP::sudo
 zinit snippet OMZP::vagrant
 zinit snippet OMZP::archlinux
 zinit snippet OMZP::golang
+zinit snippet OMZP::colored-man-pages 
 zinit wait lucid for \
   atpull"%atclone" atclone"_fix-omz-plugin" \
-    OMZP::colored-man-pages \
-  atpull"%atclone" atclone"_fix-omz-plugin" \
     OMZP::aliases \
-
-
 
 # Add in Powerlevel10k
 zinit ice depth=1; zinit light romkatv/powerlevel10k
