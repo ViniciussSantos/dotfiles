@@ -25,3 +25,6 @@ _darcs
 #random stuff 
 scripts
 .config/tmux/plugins
+.config/rofi/.current_wallpaper
+.config/waybar/config
+.config/waybar/style.css
