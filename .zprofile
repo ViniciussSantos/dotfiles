@@ -19,3 +19,10 @@ if [[ ! "$PATH" == *"$FZF_BIN_PATH"* ]]; then
 fi
 
 export PATH=${PATH}:`go env GOPATH`/bin
+
+# bun completions
+[ -s "/home/vini/.bun/_bun" ] && source "/home/vini/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
