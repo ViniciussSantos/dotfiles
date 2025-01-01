@@ -21,7 +21,7 @@ fi
 export PATH=${PATH}:`go env GOPATH`/bin
 
 # bun completions
-[ -s "/home/vini/.bun/_bun" ] && source "/home/vini/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
