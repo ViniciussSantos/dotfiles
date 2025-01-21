@@ -14,20 +14,7 @@ setopt histignorealldups sharehistory
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
-
-is_laptop() {
-  if [[ -f /sys/class/dmi/id/chassis_type ]]; then
-    local chassis_type=$(cat /sys/class/dmi/id/chassis_type)
-    if [[ "$chassis_type" == "8" || "$chassis_type" == "9" || "$chassis_type" == "10" || "$chassis_type" == "14" ]]; then
-      return 0  
-    fi
-  fi
-  return 1  
-}
-
-if is_laptop; then
-  bindkey "^[[3~" delete-char
-fi
+bindkey "^[[3~" delete-char
 
 #zinit 
 # Set the directory we want to store zinit and plugins
