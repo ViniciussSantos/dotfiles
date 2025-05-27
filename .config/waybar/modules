@@ -19,10 +19,14 @@
 		"4": [],
 		"5": [],
 	},
-	"format-icons": {
-		"active": "",
-		"default": "",
-	},
+ "format-icons": {
+      "urgent": "",
+      "active": "", // focused workspace on current monitor 
+      "visible": "", // focused workspace on other monitors
+      "default": "",
+      "empty": "" // persistent (created by this plugin)
+    },
+    "all-outputs": false // recommended
 },
 // ROMAN Numerals style
 "hyprland/workspaces#roman": {
