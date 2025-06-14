@@ -41,7 +41,6 @@
 	"group/connections",
 	"custom/separator#line",
 	"tray",
-	"mpris", 
 	"group/audio",
 	"custom/separator#line",
 	"keyboard-state",
