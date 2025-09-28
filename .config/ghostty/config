@@ -1,6 +1,6 @@
 window-decoration = false
 background-opacity = 0.9
 font-size = 14
-theme= catppuccin-mocha
+theme= Catppuccin Mocha
 shell-integration = zsh
 font-family = "JetBrains Mono"
