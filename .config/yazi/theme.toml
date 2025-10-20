@@ -9,7 +9,7 @@ use = "catppuccin-mocha"
 
 # : Manager {{{
 
-[manager]
+[mgr]
 cwd = { fg = "cyan" }
 
 # Hovered
