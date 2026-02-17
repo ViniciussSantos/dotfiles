@@ -3,6 +3,8 @@
 export EDITOR='nvim'
 export VISUAL='nvim'
 
+export MANPAGER="nvim +Man!" 
+
 if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 export PATH="$PATH:/opt/jmeter/bin"
