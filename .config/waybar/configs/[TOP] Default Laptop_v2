@@ -43,7 +43,6 @@
 	"tray",
 	"group/audio",
 	"custom/separator#line",
-	"keyboard-state",
 	"custom/keyboard",
 	"custom/lock",
 	"custom/power",
