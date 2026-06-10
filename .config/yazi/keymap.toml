@@ -1,4 +1,4 @@
-"$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
+#:schema https://yazi-rs.github.io/schemas/keymap.json
 
 [mgr]
 
@@ -73,6 +73,7 @@ keymap = [
 	{ on = "d",         run = "remove",                      desc = "Trash selected files" },
 	{ on = "D",         run = "remove --permanently",        desc = "Permanently delete selected files" },
 	{ on = "a",         run = "create",                      desc = "Create a file (ends with / for directories)" },
+	{ on = "A",         run = "bulk_create",                 desc = "Bulk create files" },
 	{ on = "r",         run = "rename --cursor=before_ext",  desc = "Rename selected file(s)" },
 	{ on = ";",         run = "shell --interactive",         desc = "Run a shell command" },
 	{ on = ":",         run = "shell --block --interactive", desc = "Run a shell command (block until finishes)" },
@@ -253,16 +254,16 @@ keymap = [
 	{ on = "<C-f>",   run = "move 1",  desc = "Move forward a character" },
 
 	# Word-wise movement
-	{ on = "b",         run = "backward",                    desc = "Move back to the start of the current or previous word" },
-	{ on = "B",         run = "backward --far",              desc = "Move back to the start of the current or previous WORD" },
-	{ on = "w",         run = "forward",                     desc = "Move forward to the start of the next word" },
-	{ on = "W",         run = "forward --far",               desc = "Move forward to the start of the next WORD" },
-	{ on = "e",         run = "forward --end-of-word",       desc = "Move forward to the end of the current or next word" },
-	{ on = "E",         run = "forward --far --end-of-word", desc = "Move forward to the end of the current or next WORD" },
-	{ on = "<A-b>",     run = "backward",                    desc = "Move back to the start of the current or previous word" },
-	{ on = "<A-f>",     run = "forward --end-of-word",       desc = "Move forward to the end of the current or next word" },
-	{ on = "<C-Left>",  run = "backward",                    desc = "Move back to the start of the current or previous word" },
-	{ on = "<C-Right>", run = "forward --end-of-word",       desc = "Move forward to the end of the current or next word" },
+	{ on = "b",         run = "backward",                   desc = "Move back to the start of the current or previous word" },
+	{ on = "B",         run = "backward wide",              desc = "Move back to the start of the current or previous WORD" },
+	{ on = "w",         run = "forward",                    desc = "Move forward to the start of the next word" },
+	{ on = "W",         run = "forward wide",               desc = "Move forward to the start of the next WORD" },
+	{ on = "e",         run = "forward --end-of-word",      desc = "Move forward to the end of the current or next word" },
+	{ on = "E",         run = "forward wide --end-of-word", desc = "Move forward to the end of the current or next WORD" },
+	{ on = "<A-b>",     run = "backward lean",              desc = "Move back to the start of the current or previous word" },
+	{ on = "<A-f>",     run = "forward lean --end-of-word", desc = "Move forward to the end of the current or next word" },
+	{ on = "<C-Left>",  run = "backward lean",              desc = "Move back to the start of the current or previous word" },
+	{ on = "<C-Right>", run = "forward lean --end-of-word", desc = "Move forward to the end of the current or next word" },
 
 	# Line-wise movement
 	{ on = "0",      run = "move bol",        desc = "Move to the BOL" },
