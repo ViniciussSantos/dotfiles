@@ -16,13 +16,16 @@ FPS=60
 TYPE="random"
 DURATION=1
 BEZIER=".43,1.19,1,.4"
-SWWW_PARAMS="--transition-fps $FPS --transition-type $TYPE --transition-duration $DURATION --transition-bezier $BEZIER"
+AWWW_PARAMS="--transition-fps $FPS --transition-type $TYPE --transition-duration $DURATION --transition-bezier $BEZIER"
 
 
-swww query || swww-daemon --format xrgb && swww img -o $focused_monitor ${RANDOMPICS} $SWWW_PARAMS
+if ! awww query >/dev/null 2>&1; then
+  awww-daemon --format xrgb &
+  sleep 0.2
+fi
+awww img -o "$focused_monitor" "$RANDOMPICS" $AWWW_PARAMS
 
 
-${scriptsDir}/WallustSwww.sh
+"${scriptsDir}/WallustSwww.sh"
 sleep 1
-${scriptsDir}/Refresh.sh 
-
+"${scriptsDir}/Refresh.sh"

@@ -46,8 +46,8 @@ yad --width=$dynamic_width --height=$dynamic_height \
 " Shift Q " "kills an active window" "(kill)" \
 " Alt V" "Clipboard Manager" "(cliphist)" \
 " W" "Choose wallpaper" "(Wallpaper Menu)" \
-" Shift W" "Choose wallpaper effects" "(imagemagick + swww)" \
-"CTRL ALT W" "Random wallpaper" "(via swww)" \
+" Shift W" "Choose wallpaper effects" "(imagemagick + awww)" \
+"CTRL ALT W" "Random wallpaper" "(via awww)" \
 " B" "Hide/UnHide Waybar" "waybar" \
 " ALT R" "Reload Waybar swaync Rofi" "CHECK NOTIFICATION FIRST!!!" \
 " SHIFT N" "Launch Notification Panel" "swaync Notification Center" \
