@@ -7,7 +7,6 @@ export MANPAGER="nvim +Man!"
 
 if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
-export PATH="$PATH:/opt/jmeter/bin"
 export PATH=$PATH:/usr/local/go/bin
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 . "$HOME/.cargo/env"
