@@ -31,8 +31,12 @@ threshold = 10
 cava.template = 'templates/colors-cava'
 cava.target = '~/.config/cava/config'
 
+# hyprlock still uses the hyprlang format, Hyprland itself reads the lua one
 hypr.template = 'templates/colors-hyprland.conf'
 hypr.target = '~/.config/hypr/wallust/wallust-hyprland.conf'
+
+hypr-lua.template = 'templates/colors-hyprland.lua'
+hypr-lua.target = '~/.config/hypr/wallust/wallust-hyprland.lua'
 
 rofi.template = 'templates/colors-rofi.rasi'
 rofi.target = '~/.config/rofi/wallust/colors-rofi.rasi'
