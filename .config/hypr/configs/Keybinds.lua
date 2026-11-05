@@ -8,16 +8,8 @@ local UserScripts = home .. "/.config/hypr/UserScripts"
 local bind = hl.bind
 local exec = hl.dsp.exec_cmd
 
--- Plugins are loaded by hyprpm after the first config pass, so their functions are looked up
--- when the key is pressed instead of when the config is read.
-local function smw(fn, arg)
-    return function()
-        local plugin = hl.plugin.split_monitor_workspaces
-        if plugin ~= nil then
-            return plugin[fn](arg)
-        end
-    end
-end
+local smw = require("plugins.split-monitor-workspaces")
+smw.setup({ workspace_count = 9 })
 
 -- Replacement for the removed `workspaceopt allfloat`: float every window on the active
 -- workspace, or tile them all back if they're already floating.
@@ -147,41 +139,27 @@ bind(mainMod .. " + SHIFT + tab", hl.dsp.focus({ workspace = "m-1" }))
 bind(mainMod .. " + SHIFT + U", hl.dsp.window.move({ workspace = "special" }))
 bind(mainMod .. " + U", hl.dsp.workspace.toggle_special("special"))
 
--- split-monitor-workspaces
-if hl.plugin.split_monitor_workspaces ~= nil then
-    hl.config({
-        plugin = {
-            split_monitor_workspaces = {
-                count = 9,
-                keep_focused = 1,
-                enable_notifications = 0,
-                enable_persistent_workspaces = 1,
-            },
-        },
-    })
-end
-
 -- The following mappings use the key codes to better support various keyboard layouts
 -- 1 is code:10, 2 is code:11, etc
-for i = 1, 10 do
+for i = 1, smw.get_amount_of_workspaces() do
     local key = "code:" .. (i + 9)
     -- Switch workspaces with mainMod + [0-9]
-    bind(mainMod .. " + " .. key, smw("workspace", tostring(i)))
+    bind(mainMod .. " + " .. key, smw.workspace(tostring(i)))
     -- Move active window and follow to workspace mainMod + SHIFT [0-9]
-    bind(mainMod .. " + SHIFT + " .. key, smw("move_to_workspace", tostring(i)))
+    bind(mainMod .. " + SHIFT + " .. key, smw.move_to_workspace(tostring(i)))
     -- Move active window to a workspace silently mainMod + CTRL [0-9]
-    bind(mainMod .. " + CTRL + " .. key, smw("move_to_workspace_silent", tostring(i)))
+    bind(mainMod .. " + CTRL + " .. key, smw.move_to_workspace_silent(tostring(i)))
 end
-bind(mainMod .. " + SHIFT + bracketleft", smw("move_to_workspace", "-1")) -- brackets [ or ]
-bind(mainMod .. " + SHIFT + bracketright", smw("move_to_workspace", "+1"))
-bind(mainMod .. " + CTRL + bracketleft", smw("move_to_workspace_silent", "-1")) -- brackets [ or ]
-bind(mainMod .. " + CTRL + bracketright", smw("move_to_workspace_silent", "+1"))
+bind(mainMod .. " + SHIFT + bracketleft", smw.move_to_workspace("-1")) -- brackets [ or ]
+bind(mainMod .. " + SHIFT + bracketright", smw.move_to_workspace("+1"))
+bind(mainMod .. " + CTRL + bracketleft", smw.move_to_workspace_silent("-1")) -- brackets [ or ]
+bind(mainMod .. " + CTRL + bracketright", smw.move_to_workspace_silent("+1"))
 
 -- Scroll through existing workspaces with mainMod + scroll
-bind(mainMod .. " + mouse_down", smw("workspace", "e+1"))
-bind(mainMod .. " + mouse_up", smw("workspace", "e-1"))
-bind(mainMod .. " + period", smw("workspace", "e+1"))
-bind(mainMod .. " + comma", smw("workspace", "e-1"))
+bind(mainMod .. " + mouse_down", smw.cycle_workspaces("next"))
+bind(mainMod .. " + mouse_up", smw.cycle_workspaces("prev"))
+bind(mainMod .. " + period", smw.cycle_workspaces("next"))
+bind(mainMod .. " + comma", smw.cycle_workspaces("prev"))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
