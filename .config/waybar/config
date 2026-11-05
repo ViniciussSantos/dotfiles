@@ -40,7 +40,7 @@
 	"tray",
 	"group/audio",
 	"custom/separator#line",
-	"custom/keyboard",
+	"hyprland/language",
 	"custom/lock",
 	"custom/power",
 	],

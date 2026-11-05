@@ -106,7 +106,7 @@
 "tray": { "icon-size": 18, "spacing": 4 },
 
 // Personal actions
-"custom/keyboard": { "exec": "cat ~/.cache/kb_layout", "interval": 1, "format": " {}", "on-click": "~/.config/hypr/scripts/SwitchKeyboardLayout.sh" },
+"hyprland/language": { "format": " {short}", "on-click": "~/.config/hypr/scripts/SwitchKeyboardLayout.sh" },
 "custom/lock": { "format": "󰌾", "on-click": "~/.config/hypr/scripts/LockScreen.sh", "tooltip": true, "tooltip-format": "󰷛 Screen Lock" },
 "custom/menu": { "format": "", "on-click": "pkill rofi || rofi -show drun -modi run,drun,filebrowser,window", "on-click-middle": "~/.config/hypr/UserScripts/WallpaperSelect.sh", "tooltip": true, "tooltip-format": "Left Click: Rofi Menu\nMiddle Click: Wallpaper Menu" },
 "custom/power": { "format": "⏻ ", "on-click": "~/.config/hypr/scripts/Wlogout.sh", "on-click-right": "~/.config/hypr/scripts/ChangeBlur.sh", "tooltip": true, "tooltip-format": "Left Click: Logout Menu\nRight Click: Change Blur" },

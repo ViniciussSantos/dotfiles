@@ -120,7 +120,7 @@ window#waybar.empty #window {
 #custom-backlight,
 #custom-cycle_wall,
 #custom-hint,
-#custom-keyboard,
+#language,
 #custom-light_dark,
 #custom-lock,
 #custom-menu,
@@ -183,7 +183,7 @@ window#waybar.empty #window {
   color: @green;
 }
 
-#custom-keyboard,
+#language,
 #memory {
   color: @sky;
 }
