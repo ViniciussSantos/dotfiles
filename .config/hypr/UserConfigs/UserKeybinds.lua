@@ -15,10 +15,10 @@ local exec = hl.dsp.exec_cmd
 -- hl.bind("SUPER_L", exec("pkill rofi || rofi -show drun -modi drun,filebrowser,run,window"), { release = true }) -- Super Key to Launch rofi menu
 hl.bind(mainMod .. " + D", exec("pkill rofi || rofi -show drun -modi drun,filebrowser,run,window"))
 
-hl.bind("CTRL + ALT + T", exec(term)) -- Launch terminal
-hl.bind(mainMod .. " + Return", exec(term)) -- Launch terminal
+hl.bind("CTRL + ALT + T", exec(term))                                 -- Launch terminal
+hl.bind(mainMod .. " + Return", exec(term))                           -- Launch terminal
 
-hl.bind(mainMod .. " + T", exec(files)) -- Launch file manager
+hl.bind(mainMod .. " + T", exec(files))                               -- Launch file manager
 
 hl.bind(mainMod .. " + ALT + C", exec(UserScripts .. "/RofiCalc.sh")) -- calculator (qalculate)
 

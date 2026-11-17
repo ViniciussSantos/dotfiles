@@ -15,11 +15,11 @@ local rule = hl.window_rule
 
 -- TAGS - add apps under appropriate tag to use the same settings
 local function tag_class(class, tag)
-    rule({ match = { class = class }, tag = "+" .. tag })
+  rule({ match = { class = class }, tag = "+" .. tag })
 end
 
 local function tag_title(title, tag)
-    rule({ match = { title = title }, tag = "+" .. tag })
+  rule({ match = { title = title }, tag = "+" .. tag })
 end
 
 -- browser tags
@@ -128,13 +128,21 @@ rule({ match = { class = "^([Ff]erdium)$" }, float = true })
 -- popups and dialogue
 local dialog_size = { "(monitor_w*0.7)", "(monitor_h*0.6)" }
 rule({ match = { title = "^(Authentication Required)$" }, float = true, center = true })
-rule({ match = { class = "(codium|codium-url-handler|VSCodium)", title = "negative:(.*codium.*|.*VSCodium.*)" }, float = true })
+rule({
+  match = { class = "(codium|codium-url-handler|VSCodium)", title = "negative:(.*codium.*|.*VSCodium.*)" },
+  float = true,
+})
 rule({ match = { class = "^(com.heroicgameslauncher.hgl)$", title = "negative:(Heroic Games Launcher)" }, float = true })
 rule({ match = { class = "^([Ss]team)$", title = "negative:^([Ss]team)$" }, float = true })
 rule({ match = { title = "^(Add Folder to Workspace)$" }, float = true, size = dialog_size, center = true })
 rule({ match = { title = "^(Save As)$" }, float = true, size = dialog_size, center = true })
 rule({ match = { initial_title = "(Open Files)" }, float = true, size = dialog_size })
-rule({ match = { title = "^(SDDM Background)$" }, float = true, center = true, size = { "(monitor_w*0.16)", "(monitor_h*0.12)" } })
+rule({
+  match = { title = "^(SDDM Background)$" },
+  float = true,
+  center = true,
+  size = { "(monitor_w*0.16)", "(monitor_h*0.12)" },
+})
 rule({ match = { class = "^(yad)$" }, float = true, center = true, size = { "(monitor_w*0.2)", "(monitor_h*0.2)" } })
 
 -- OPACITY

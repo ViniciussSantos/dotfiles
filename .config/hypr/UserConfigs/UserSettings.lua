@@ -5,137 +5,137 @@
 local colors = require("wallust.wallust-hyprland")
 
 hl.config({
-    dwindle = {
-        preserve_split = true,
-        special_scale_factor = 0.8,
+  dwindle = {
+    preserve_split = true,
+    special_scale_factor = 0.8,
+  },
+
+  master = {
+    new_status = "master",
+    new_on_top = true,
+    mfact = 0.5,
+  },
+
+  general = {
+    border_size = 2,
+    gaps_in = 6,
+    gaps_out = 8,
+
+    resize_on_border = true,
+
+    col = {
+      active_border = colors.color12,
+      -- inactive_border = colors.background,
     },
 
-    master = {
-        new_status = "master",
-        new_on_top = true,
-        mfact = 0.5,
+    layout = "dwindle",
+  },
+
+  decoration = {
+    rounding = 10,
+
+    active_opacity = 1.0,
+    fullscreen_opacity = 1.0,
+
+    -- shadow = {
+    --     enabled = true,
+    --     range = 6,
+    --     render_power = 1,
+    --     color = colors.color12,
+    --     color_inactive = 0x50000000,
+    -- },
+
+    blur = {
+      enabled = true,
+      size = 6,
+      passes = 2,
+      ignore_opacity = true,
+      new_optimizations = true,
+      special = true,
+    },
+  },
+
+  animations = {
+    enabled = true,
+  },
+
+  input = {
+    kb_layout = "us, br",
+    kb_variant = "",
+    kb_model = "",
+    kb_options = "grp:win_space_toggle",
+    kb_rules = "",
+    repeat_rate = 25,
+    repeat_delay = 900,
+    numlock_by_default = true,
+    left_handed = false,
+    follow_mouse = 1,
+    float_switch_override_focus = 0,
+
+    sensitivity = 0.40,
+    accel_profile = "flat",
+
+    touchpad = {
+      disable_while_typing = true,
+      natural_scroll = false,
+      clickfinger_behavior = false,
+      middle_button_emulation = true,
+      tap_to_click = true,
+      drag_lock = false,
     },
 
-    general = {
-        border_size = 2,
-        gaps_in = 6,
-        gaps_out = 8,
-
-        resize_on_border = true,
-
-        col = {
-            active_border = colors.color12,
-            -- inactive_border = colors.background,
-        },
-
-        layout = "dwindle",
+    -- below for devices with touchdevice ie. touchscreen
+    touchdevice = {
+      enabled = true,
     },
 
-    decoration = {
-        rounding = 10,
+    -- below is for tablet see link above for proper variables
+    tablet = {
+      transform = 0,
+      left_handed = false,
+    },
+  },
 
-        active_opacity = 1.0,
-        fullscreen_opacity = 1.0,
-
-        -- shadow = {
-        --     enabled = true,
-        --     range = 6,
-        --     render_power = 1,
-        --     color = colors.color12,
-        --     color_inactive = 0x50000000,
-        -- },
-
-        blur = {
-            enabled = true,
-            size = 6,
-            passes = 2,
-            ignore_opacity = true,
-            new_optimizations = true,
-            special = true,
-        },
+  group = {
+    col = {
+      border_active = colors.color15,
     },
 
-    animations = {
-        enabled = true,
+    groupbar = {
+      col = {
+        active = colors.color0,
+      },
     },
+  },
 
-    input = {
-        kb_layout = "br, us",
-        kb_variant = "",
-        kb_model = "",
-        kb_options = "grp:win_space_toggle",
-        kb_rules = "",
-        repeat_rate = 25,
-        repeat_delay = 900,
-        numlock_by_default = true,
-        left_handed = false,
-        follow_mouse = 1,
-        float_switch_override_focus = 0,
+  misc = {
+    disable_hyprland_logo = true,
+    disable_splash_rendering = true,
+    -- vrr = 0,
+    mouse_move_enables_dpms = true,
+    enable_swallow = true,
+    swallow_regex = "^(kitty)$",
+    focus_on_activate = false,
+    initial_workspace_tracking = 0,
+    middle_click_paste = false,
+  },
 
-        sensitivity = 0.40,
-        accel_profile = "flat",
+  binds = {
+    workspace_back_and_forth = true,
+    allow_workspace_cycles = true,
+    pass_mouse_when_bound = false,
+  },
 
-        touchpad = {
-            disable_while_typing = true,
-            natural_scroll = false,
-            clickfinger_behavior = false,
-            middle_button_emulation = true,
-            tap_to_click = true,
-            drag_lock = false,
-        },
+  -- Could help when scaling and not pixelating
+  xwayland = {
+    force_zero_scaling = true,
+  },
 
-        -- below for devices with touchdevice ie. touchscreen
-        touchdevice = {
-            enabled = true,
-        },
-
-        -- below is for tablet see link above for proper variables
-        tablet = {
-            transform = 0,
-            left_handed = false,
-        },
-    },
-
-    group = {
-        col = {
-            border_active = colors.color15,
-        },
-
-        groupbar = {
-            col = {
-                active = colors.color0,
-            },
-        },
-    },
-
-    misc = {
-        disable_hyprland_logo = true,
-        disable_splash_rendering = true,
-        -- vrr = 0,
-        mouse_move_enables_dpms = true,
-        enable_swallow = true,
-        swallow_regex = "^(kitty)$",
-        focus_on_activate = false,
-        initial_workspace_tracking = 0,
-        middle_click_paste = false,
-    },
-
-    binds = {
-        workspace_back_and_forth = true,
-        allow_workspace_cycles = true,
-        pass_mouse_when_bound = false,
-    },
-
-    -- Could help when scaling and not pixelating
-    xwayland = {
-        force_zero_scaling = true,
-    },
-
-    cursor = {
-        no_hardware_cursors = false,
-        enable_hyprcursor = true,
-        warp_on_change_workspace = true,
-    },
+  cursor = {
+    no_hardware_cursors = false,
+    enable_hyprcursor = true,
+    warp_on_change_workspace = true,
+  },
 })
 
 hl.curve("wind", { type = "bezier", points = { { 0.05, 0.9 }, { 0.1, 1.05 } } })
